@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Entrar
+{% endblock %}
+
+{% block main %}
+    <div>
+        <img class="decorationgifs" src="https://cdn.dribbble.com/users/427368/screenshots/10855800/wof-r.gif" alt="left gif">
+        <img src="https://www.gifsanimados.org/data/media/1049/casino-imagen-animada-0005.gif" alt="right gif">
+    </div>
+    &nbsp;
+    <div>
+        <form action="/entrar" method="post">
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Usuario" type="text">
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="password" placeholder="Contrasena" type="password">
+            </div>
+            <button class="btn btn-primary" type="submit">Entrar</button>
+        </form>
+    </div>
+
+{% endblock %}

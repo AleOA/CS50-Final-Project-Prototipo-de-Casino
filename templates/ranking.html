@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Ranking
+{% endblock %}
+
+{% block main %}
+<div>
+    <img class="decorationgifs" src="/static/casino.gif" alt="ranking gif">
+</div>
+<div>
+    &nbsp;
+    <h1 class="bg-info"><b>Ranking de Usuarios (TOP 5)</b></h1>
+    <table class="table table-dark table-bordered">
+        <thead>
+            <tr>
+                <th>Posición</th>
+                <th>Usuario</th>
+                <th>Ganancias ($)</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in get_ranking_data %}
+            <tr>
+                <td class="bg-danger">{{ user["position"] }}</td>
+                <td class="bg-primary">{{ user["username"] }}</td>
+                <td class="bg-success">${{ user["money"] }}</td>
+            </tr>
+
+        {% endfor %}
+    </table>
+</div>
+
+&nbsp;
+<div>
+    <img src="https://rcdn.rolloid.net/uploads/2018/01/giphy-78.gif" alt="simpsons gif">
+</div>
+{% endblock %}

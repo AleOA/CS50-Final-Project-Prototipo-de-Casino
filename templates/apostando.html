@@ -1,0 +1,71 @@
+{% extends "layoutapostando.html" %}
+
+{% block title %}
+    Jugar
+{% endblock %}
+
+{% block main %}
+<form onsubmit="check_zero(); return false;">
+    <input type="submit" class="btn btn-primary btn-lg" value="HACER CLICK PARA JUGAR" onclick="play()">
+</form>
+&nbsp;
+<div>
+    <h1 id="descontar" class="greencol">5</h1>
+</div>
+
+&nbsp;
+&nbsp;
+
+
+
+<header style="padding-right:80px">
+    <img class="decorationgifs floatLeft" src="https://cdn.dribbble.com/users/427368/screenshots/10855800/wof-r.gif" alt="left gif">
+    <img class="floatRight" src="https://www.gifsanimados.org/data/media/1049/casino-imagen-animada-0005.gif" alt="right gif">
+    <h1 class="orange display-4"><b>JUEGO EN DIRECTO:</b></h1>
+    <h2 id="live_game" class="orange display-3"><b>0.00</b></h2>
+
+</header>
+&nbsp;
+<div>
+    &nbsp;
+    <form id="click_cash_out" onsubmit="return checkBeforeSubmit()" action="/apostando" method="post">
+        <input class="btn btn-outline-info no-click btn-lg" type="text" name="uptrend_multiplier" id="uptrend_multiplier" value="0.00"></input>
+        <input class="btn btn-danger btn-lg" type="submit" name="retirar_apuesta" id="retirar_apuesta" value="Retirar Apuesta" disabled></input>
+    </form>
+
+    &nbsp;
+    <h2 class="greencol">Cantidad apostada: <b>${{ cantidad_apostada }}</b></h2>
+    &nbsp;
+</div>
+&nbsp;
+<div>
+    &nbsp;
+    <h1 class="bg-info"><b>Últimas Apuestas Realizadas por Usuarios:</b></h1>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>Usuario</th>
+                <th>Hash</th>
+                <th>BUST</th>
+                <th>Retiro de Apuesta</th>
+                <th>Monto Apostado ($)</th>
+                <th>Ganancias ($)</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for transaction in last_transactions_dict %}
+            <tr>
+                <td class="bg-primary">{{ transaction["username"] }}</td>
+                <td class="bg-success">{{ transaction["hash"] }}</td>
+                <td class="bg-danger">{{ transaction["bust"] }}</td>
+                <td class="bg-info">{{ transaction["cashed_out"] }}</td>
+                <td class="bg-primary">${{ transaction["bet"] }}</td>
+                <td class="bg-success">${{ transaction["earnings"] }}</td>
+                <td class="bg-danger">{{ transaction["date"] }}</td>
+            </tr>
+
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

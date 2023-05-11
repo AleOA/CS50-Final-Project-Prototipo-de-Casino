@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Preguntas Frecuentes
+{% endblock %}
+
+{% block main %}
+<div>
+    <header>
+        <img class="preguntasleftgif floatLeft" src="/static/question.gif" alt="left gif">
+        <img class="floatRight preguntasrightgif" src="/static/question.gif" alt="right gif">
+        <h1 class="bg-info">Preguntas Frecuentes</h1>
+        &nbsp;
+    </header>
+    &nbsp;
+</div>
+
+&nbsp;
+<div>
+    &nbsp;
+    <h2 class="bg-success"><b>¿Cómo se juga?</b></h2>
+
+    <h4 class="answers">Seleccione la cantidad a apostar y realice su apuesta. El multiplicador empezará a aumentar. Si logra sacar su apuesta antes de que el multiplicador pare, gana esa cantidad.
+    Si no lo logra, pierde toda su apuesta.</h4>
+</div>
+&nbsp;
+<div>
+    <h2 class="bg-success"><b>¿Es justo el juego?</b></h2>
+
+    <h4 class="answers">Sí. Para crear el juego se crearon 10000 hashes "sha256". Cada hash fue creado en base al hash anterior en mínusculas y representa a cada juego. El último hash de la lista
+    representa el primer juego creado en ArgenBust y el primer hash es el último juego. Para calcular el multiplicador de cada juego se utilizó la siguiente ecuación matemática:</h4>
+    <h4 class="answers">h = int(sha_signature[0:13], 16) ---> "h" se obtiene de los primeros 13 digitos del hash que son convertidos a hexadecimal.</h4>
+    <h4 class="answers">e = math.pow(2, 52) ---> "e" representa al número 2 elevado a la 52.</h4>
+    <h4 class="answers">multiplicador = ((100 * e - h) / (e - h)) / 100 ---> El multiplicador se obtiene de la siguiente ecuación.</h4>
+    <h4 class="answers">Hay que tener en cuenta que si el hash empieza con 0 no se cumplirá con esta ecuación, y el juego terminará en el multiplicador "0.00".</h4>
+    <h4 class="answers">Por esto, ArgenBust no puede controlar el resultado de ningún juego porque ya están definidos.</h4>
+</div>
+{% endblock %}

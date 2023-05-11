@@ -1,0 +1,182 @@
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+}
+
+/* colors for brand */
+nav .navbar-brand .blue
+{
+    color: #537fbe;
+}
+nav .navbar-brand .red
+{
+    color: #ea433b;
+}
+nav .navbar-brand .yellow
+{
+    color: #f5b82e;
+}
+nav .navbar-brand .green
+{
+    color: #2e944b;
+}
+
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+main
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+}
+
+main img
+{
+    /* constrain images on small screens */
+    max-width: 100%;
+}
+
+#titulo
+{
+    /* center contents */
+    text-align: center;
+    font-size: 40px;
+    font-family: "Courier New", "sans-serif";
+    color: #FBFDFE;
+}
+
+#mainbody{
+    background-color: #444;
+}
+
+.logo
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+.casinologo
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+}
+
+body {
+  background: #444;
+}
+
+
+#jugarahora {
+font-family: "Comic Sans MS", cursive, sans-serif;
+font-size: 31px;
+letter-spacing: 2px;
+word-spacing: 2px;
+color: #000000;
+font-weight: 700;
+text-decoration: none;
+font-style: normal;
+font-variant: normal;
+text-transform: uppercase;
+text-align: center;
+}
+
+#verified
+{
+  max-width:10%;
+  max-height:10%;
+  margin: 200px;
+}
+
+.button {
+  transition-duration: 0.4s;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+.center{
+    text-align:center;
+}
+
+#money
+{
+    color: green;
+}
+
+.greencol
+{
+    color: green;
+}
+
+.orange
+{
+    color: orange;
+}
+
+.red
+{
+    color: red;
+}
+
+.no-click {
+    pointer-events: none;
+}
+
+.decorationgifs
+{
+    width: 25%;
+}
+
+.playgif
+{
+    width: 40%;
+}
+.floatLeft
+{
+    float: left;
+}
+
+.floatRight
+{
+    float: right;
+}
+
+.answers
+{
+    color: white;
+}
+
+.preguntasleftgif
+{
+    width: 14%;
+}
+
+.preguntasrightgif
+{
+    width: 14%;
+}
+
+.moneygif
+{
+    width: 15%;
+}
+.medalgif
+{
+    width: 5%;
+}

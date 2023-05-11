@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Registrarse
+{% endblock %}
+
+{% block main %}
+    <div>
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/d62e7a74708337.5c379806453ae.gif" alt="gif">
+    </div>
+    &nbsp;
+    <form action="/registrarse" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Usuario" type="text">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Contrasena" type="password">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="confirmation" placeholder="Repetir Contrasena" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Entrar</button>
+    </form>
+{% endblock %}

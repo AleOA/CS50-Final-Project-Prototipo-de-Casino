@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- documentation at http://getbootstrap.com/docs/4.1/, alternative themes at https://bootswatch.com/ -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- https://favicon.io/emoji-favicons/money-mouth-face/ -->
+        <link href="/static/a.png" rel="icon">
+
+        <link href="/static/styles.css" rel="stylesheet">
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+        <script src="/static/functions.js"></script>
+
+        <title>ArgenBust: {% block title %}{% endblock %}</title>
+
+    </head>
+
+    <body onLoad="playbackgroundmusic()">
+        <audio id="backgroundmusic" src="/static/musicfinalproject.mp3"></audio>
+        <nav class="navbar navbar-expand-md navbar-light bg-light border">
+            <a class="navbar-brand" href="/"><span class="blue">Argen</span><span class="green">Bust</span></a>
+            <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar" data-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar">
+                {% if session.user_id %}
+                    <ul class="navbar-nav mr-auto mt-2">
+                        <li class="nav-item"><a class="nav-link" href="/jugar">Jugar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/mihistorial">Mi Historial</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/questions">Preguntas Frecuentes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/ranking">Ranking</a></li>
+                        <img class="medalgif" src="/static/medal.gif" alt="medal gif">
+                    </ul>
+                    <ul class="navbar-nav ml-auto mt-2">
+                        <li class="nav-item" id="money"><b>Dinero: ${{ money }} ({{ username }})</b></li>
+                        <li class="nav-item" id="moneygif"><img class="moneygif" src="/static/money.gif" alt="money gif"></li>
+                    </ul>
+                    <ul class="navbar-nav mr-auto mt-2">
+                        <input type="submit" class="btn btn-outline-success" id="music" onclick="playbackgroundmusic()" value="Pausar Musica"></input>
+                    </ul>
+
+                    <ul class="navbar-nav m1-auto mt-2">
+                        <li class="nav-item"><a class="nav-link" href="/salir">Salir</a></li>
+                    </ul>
+                {% else %}
+                    <ul class="navbar-nav mr-auto mt-2">
+                        <li class="nav-item"><a class="nav-link" href="/entrar">Jugar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/questions">Preguntas Frecuentes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/ranking">Ranking</a></li>
+                        <img class="medalgif" src="/static/medal.gif" alt="medal gif">
+                    </ul>
+                    <ul class="navbar-nav mr-auto mt-2">
+                        <input type="submit" class="btn btn-outline-success" id="music" onclick="playbackgroundmusic()" value="Pausar Musica"></input>
+                    </ul>
+                    <ul class="navbar-nav ml-auto mt-2">
+                        <li class="nav-item"><a class="nav-link" href="/registrarse">Registrarse</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/entrar">Entrar</a></li>
+                    </ul>
+                {% endif %}
+            </div>
+        </nav>
+
+        <main class="container p-5">
+            {% block main %}{% endblock %}
+        </main>
+
+    </body>
+
+</html>

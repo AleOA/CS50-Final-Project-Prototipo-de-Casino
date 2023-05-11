@@ -1,5 +1,5 @@
 # CS50 Final Project - Prototipo de casino
-Un prototipo de casino que realicé para el proyecto final del CS50: Introduction to Computer Science.
+Un prototipo de casino que realicé para el proyecto final del CS50: Introduction to Computer Science en el año 2020.
 # Link para acceder:
 https://cs50finalproject.pythonanywhere.com/
 
@@ -29,4 +29,4 @@ Para calcular cada multiplicador de juego, se utilizó la siguiente ecuación:
 
 **Si el hash comienza en 0, en lugar de usar la ecuación, el juego terminará en "0.00".**
 
-Por eso se dice que es un "fair game", no puede controlar el resultado de ningún juego, porque ya están definidos y pueden verificarse a través de esas ecuaciones.
+Por eso se dice que es un "fair game", no se puede controlar el resultado de ningún juego, porque ya están definidos y pueden verificarse a través de esas ecuaciones.

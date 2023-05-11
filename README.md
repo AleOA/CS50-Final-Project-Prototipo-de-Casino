@@ -1,5 +1,5 @@
-# CS50-Final-Project---Prototipo-de-Casino
-Un prototipo de Casino que realicé para el proyecto final del CS50: Introduction to Computer Science.
+# CS50 Final Project - Prototipo de casino
+Un prototipo de casino que realicé para el proyecto final del CS50: Introduction to Computer Science.
 # Link para acceder:
 https://cs50finalproject.pythonanywhere.com/
 
